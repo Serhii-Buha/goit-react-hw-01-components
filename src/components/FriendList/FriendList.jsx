@@ -1,17 +1,18 @@
 import PropTypes from 'prop-types';
 import { FriendListItem } from 'components/FriendList/FriendListItem';
+import { List, Item } from 'components/FriendList/FriendList.styled';
 
 export const FriendList = ({ friends }) => {
   return (
-    <ul className="friend-list">
+    <List>
       {friends.map(({ avatar, name, isOnline, id }) => (
-        <li key={id} className="item">
+        <Item key={id}>
           <FriendListItem avatar={avatar} name={name} isOnline={isOnline} />
-        </li>
+        </Item>
       ))}
 
       {/* <!-- Произвольное кол-во FriendListItem --> */}
-    </ul>
+    </List>
   );
 };
 
@@ -26,12 +27,12 @@ FriendList.propTypes = {
   ).isRequired,
 };
 
-// export const FriendList = ({ friends, children }) => {
+// export const FriendList = ({ friends }) => {
 //   return (
 //     <ul className="friend-list">
-//       {friends.map(friend => (
-//         <li key={friend.id} className="item">
-//           {children}
+//       {friends.map(({ avatar, name, isOnline, id }) => (
+//         <li key={id} className="item">
+//           <FriendListItem avatar={avatar} name={name} isOnline={isOnline} />
 //         </li>
 //       ))}
 
@@ -40,12 +41,12 @@ FriendList.propTypes = {
 //   );
 // };
 
-// export const FriendList = ({ friends }) => {
+// export const FriendList = ({ friends, children }) => {
 //   return (
 //     <ul className="friend-list">
-//       {friends.map(({ avatar, name, isOnline, id }) => (
-//         <li key={id} className="item">
-//           <FriendListItem avatar={avatar} name={name} isOnline={isOnline} />
+//       {friends.map(friend => (
+//         <li key={friend.id} className="item">
+//           {children}
 //         </li>
 //       ))}
 
