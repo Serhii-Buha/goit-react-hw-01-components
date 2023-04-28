@@ -1,14 +1,18 @@
-// .status {
-//   display: block;
-//   width: 10px;
-//   height: 10px;
-//   border-radius: 50%;
-// }
+import styled from '@emotion/styled';
 
-// .status.online {
-//   background-color: green;
-// }
+export const Status = styled.span`
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
 
-// .status.offline {
-//   background-color: red;
-// }
+  margin-right: 10px;
+  margin-left: 5px;
+
+  background-color: ${({ online }) => (online ? 'green' : 'red')};
+  //   background-color: ${props => (props.online ? 'green' : 'red')};
+`;
+
+export const Name = styled.p`
+  margin-left: 10px;
+`;
