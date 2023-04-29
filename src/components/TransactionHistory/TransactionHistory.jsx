@@ -18,15 +18,13 @@ export const TransactionHistory = ({ items }) => {
       </Thead>
 
       <Tbody>
-        {items.map(({ id, type, amount, currency }) => {
-          return (
-            <TableEl key={id}>
-              <td>{type}</td>
-              <td>{amount}</td>
-              <td>{currency}</td>
-            </TableEl>
-          );
-        })}
+        {items.map(({ id, type, amount, currency }) => (
+          <TableEl key={id}>
+            <td>{type}</td>
+            <td>{amount}</td>
+            <td>{currency}</td>
+          </TableEl>
+        ))}
       </Tbody>
     </Table>
   );
